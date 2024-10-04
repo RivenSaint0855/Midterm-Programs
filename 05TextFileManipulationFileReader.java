@@ -1,26 +1,36 @@
-// Java Program to Illustrate reading from
-// FileReader using FileReader class
- 
-// Importing input output classes
-import java.io.*;
- 
-// Main class
-// ReadingFromFile
-public class GFG {
- 
-    // Main driver method
-    public static void main(String[] args) throws Exception
-    {
- 
-        // Passing the path to the file as a parameter
-        FileReader fr = new FileReader("");
- 
-        // Declaring loop variable
-        int i;
-        // Holds true till there is nothing to read
-        while ((i = fr.read()) != -1)
- 
-            // Print all the content of a file
-            System.out.print((char)i);
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class TextFileManipulator {
+    public static void main(String[] args) {
+        // Input and output file paths
+        String inputFilePath = "input.txt";
+        String outputFilePath = "output.txt";
+
+        // Using FileReader and FileWriter to read and write files
+        try (FileReader reader = new FileReader(inputFilePath);
+             FileWriter writer = new FileWriter(outputFilePath)) {
+
+            StringBuilder content = new StringBuilder();
+            int ch;
+
+            // Read the file character by character
+            while ((ch = reader.read()) != -1) {
+                content.append((char) ch); // Append the character to the StringBuilder
+            }
+
+            // Manipulate the content (e.g., convert to uppercase)
+            String manipulatedContent = content.toString().toUpperCase();
+
+            // Write the manipulated content to the output file
+            writer.write(manipulatedContent);
+
+            System.out.println("File manipulation completed successfully.");
+
+        } 
+         catch (IOException e) {
+            System.err.println("Error reading or writing files: " + e.getMessage());
+        }
     }
 }
