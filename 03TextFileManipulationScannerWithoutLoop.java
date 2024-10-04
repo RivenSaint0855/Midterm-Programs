@@ -10,7 +10,7 @@ public class ReadingEntireFileWithoutLoop
     public static void main(String[] args)
         throws FileNotFoundException
     {
-        File file = new File("C:\\Users\\pankaj\\Desktop\\test.txt");
+        File file = new File("");
         Scanner sc = new Scanner(file);
  
         // we just need to use \\Z as delimiter
