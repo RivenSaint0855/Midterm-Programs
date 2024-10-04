@@ -11,7 +11,7 @@ public class GFG {
     public static void main(String[] args) throws Exception
     {
         // File path is passed as parameter
-        File file = new File("C:\\Users\\pankaj\\Desktop\\test.txt");
+        File file = new File("");
 		
         // Note:  Double backquote is to avoid compiler
         // interpret words
