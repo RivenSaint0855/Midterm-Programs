@@ -13,8 +13,7 @@ public class GFG {
     {
  
         // Passing the path to the file as a parameter
-        FileReader fr = new FileReader(
-            "C:\\Users\\pankaj\\Desktop\\test.txt");
+        FileReader fr = new FileReader("");
  
         // Declaring loop variable
         int i;
